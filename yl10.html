@@ -12,17 +12,75 @@
     <title>Ülesanne 10 &copy;</title>
 </head>
 <body>
-    <!-- Armin 17.11.2025 -->
+     <!-- Armin 27.11.2025 -->
+     <!-- Joonas Teller on lahe vend :) -->
+
     <h1>Õpilase registeerimisvorm</h1>
     <form action="" method="get">
-        <fieldset>
+        <fieldset style="width: 450px;">
             <legend>Isikuandmed</legend>
             <label for="fname">Eesnimi</label>
             <input type="text" id="fname" required placeholder="Armin" maxlength="30"> <br>
+            <small>Kuni 30 märki nõutud; placeholder nt Armin</small> <br> <br>
             <label for="fname">Perekonna nimi</label>
-            <input type="text" id="fname" required placeholder="Armin" maxlength="30">
+            <input type="text" id="fname" required placeholder="Allas" maxlength="30"> <br>
+            <small>Kuni 30 märki nõutud; placeholder nt Allas</small> <br> <br>
+            <label for="fname">Sünnikuupäev</label>
+            <input type="date" id="sünnikuupaev" name="sünnikuupaev" min="1950-01-01" max="2025-12-31" required value="1980-01-01"><br>
+            <small>(min 1950-01-01; max 2025-12-31; vaikeväärtus 1980-01-01; nõutud)</small><br><br>
+            <input type="radio" name="tuba" value="Mees"> Mees
+            <input type="radio" name="tuba" value="Naine" checked> Naine
         </fieldset>
-
     </form>
+        <fieldset style="width: 450px;">
+            <legend>Kontakt</legend>
+            <label for="fname">E-Post</label>
+            <input type="text" id="fname" required placeholder="Nt nimi@kool.ee"> <br>
+            <small>(100 tähemärki; nõutud; placeholder: nt nimi@kool.ee)</small><br><br>
+            <label for="fname">Mobiiltelefon</label>
+            <input type="text" id="numeric" required placeholder="+372 5880 1337"> <br>
+            <small>(nõutav muster / pattern: ^\+3725\d{7,8}$)</small><br><br>
+            <label for="aadress">Aadress</label><br>
+            <textarea id="aadress" name="aadress" placeholder="Tänav, maja, korter"></textarea><br> <br>
+            <label for="fname">Postiindeks</label> <br>
+            <input type="text" id="fname" required pattern="\d{5}" placeholder="nt 10111"><br>
+            <small>täpselt 5 numbrit!</small> <br> <br>
+            <label for="fname">Riik</label> <br>
+            <input type="text" id="Riik" name="Riik" value="Eesti" readonly><br>
+            <small>(Muutmatu väli)</small>
+        </fieldset>
+    <br>
+    </form>
+    <fieldset style="width: 450px;">
+        <label>Huvialad</label><br>
+        <input type="checkbox" name="huvi_joonistamine"> Joonistamine
+        <input type="checkbox" name="huvi_laulmine"> Laulmine
+        <input type="checkbox" name="huvi_tantsimine"> Tantsimine<br><br>
+
+        <label>Kokkamine</label><br>
+        <input type="checkbox" name="kokkamine_muu"> Muu:
+        <input type="text" name="kokkamine_muu_tekst" maxlength="30" placeholder="täpsusta (Kuni 30 märki)"><br><br>
+
+        <label for="veebileht">Isiklik veebileht</label><br>
+        <input type="url" id="veebileht" name="veebileht" placeholder="https://minuleht.ee" pattern="https?://.*"><br>
+        <small>(peab algama http:// või https://)</small><br><br>
+
+        <label for="teemavarv">Eelistatud teema värv (valikuline)</label><br>
+        <input type="color" id="teemavarv" name="teemavarv"><br><br>
+
+        <label for="dokumendid">Dokumendid (PDF või pilt)</label><br>
+        <input type="file" id="dokumendid" name="dokumendid" accept=".pdf,image/*"><br>
+        <small>(lubada PDF ja pildid)</small>
+    </fieldset>
+    <br>
+    <fieldset style="width: 450px;">
+        <legend>Nõustumine</legend>
+
+        <input type="checkbox" name="nous" required> Kinnitan, et esitatud andmed on õiged ja luban nende töötlemist vastavalt kooli tingimustele.
+    </fieldset>
+        <br>
+        <button type="submit">Saada</button>
+        <button type="reset">Tühjenda</button>
+    </fieldset>    
 </body>
 </html>
